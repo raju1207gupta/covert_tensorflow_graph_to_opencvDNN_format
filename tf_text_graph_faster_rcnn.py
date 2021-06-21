@@ -291,12 +291,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Run this script to get a text graph of '
                                                  'Faster-RCNN model from TensorFlow Object Detection API. '
                                                  'Then pass it with .pb file to cv::dnn::readNetFromTensorflow function.')
-    # parser.add_argument('--input', required=False, help='Path to frozen TensorFlow graph.',default='D:/deeplearning learn/OrionEdgeSocialDistancingAPI/ModelGraph/Mask_Detection_FrozenGraph/frozen_inference_graph3.pb')
-    # parser.add_argument('--output', required=False, help='Path to output text graph.',default='covid-19/mask_detection_pipeline_config/mask_detection_faster_rcnn_inception_v2_coco_9_6_20.pbtxt')
-    # parser.add_argument('--config', required=False, help='Path to a *.config file is used for training.',default='D:/deeplearning learn/Social distancing/blockdetection/covid-19/mask_detection_pipeline_config/faster_rcnn_inception_v2_coco_9_6_20.config')
-    parser.add_argument('--input', required=False, help='Path to frozen TensorFlow graph.',default="D:/deeplearning learn/OrionEdgeSocialDistancingAPI/ModelGraph/PPE_Detection_FrozenGraph1/frozen_inference_graph.pb")
-    parser.add_argument('--output', required=False, help='Path to output text graph.',default="D:/deeplearning learn/OrionEdgeSocialDistancingAPI/ModelGraph/PPE_Detection_FrozenGraph1/PPE_detection.pbtxt")
-    parser.add_argument('--config', required=False, help='Path to a *.config file is used for training.',default="D:/deeplearning learn/OrionEdgeSocialDistancingAPI/ModelGraph/PPE_Detection_FrozenGraph1/pipeline.config")
+   
+    parser.add_argument('--input', required=False, help='Path to frozen TensorFlow graph.',default="path_to/frozen_inference_graph.pb")
+    parser.add_argument('--output', required=False, help='Path to output text graph.',default="path_to/PPE_detection.pbtxt")
+    parser.add_argument('--config', required=False, help='Path to a *.config file is used for training.',default="path_to/pipeline.config")
     args = parser.parse_args()
 
     createFasterRCNNGraph(args.input, args.config, args.output)
